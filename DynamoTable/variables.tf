@@ -7,18 +7,34 @@ variable "environment" {
 }
 
 variable "table_name" {
-    default = "test_practice_terraform"
+    default = "practice_test_terraform"
 }
 
 variable "description" {
-    default = "test_practice_terraform"
+    default = "practice_test_terraform"
 }
 
-variable "id_key" {
-    default = "id"
+variable "user_id_key" {
+    default = "user_id"
 }
 
-variable "id_key_type" {
+variable "user_id_key_type" {
+    default = "S"
+}
+
+variable "city_id_key" {
+    default = "city_id"
+}
+
+variable "city_id_key_type" {
+    default = "S"
+}
+
+variable "created_at_key" {
+    default = "created_at"
+}
+
+variable "created_at_key_type" {
     default = "S"
 }
 
@@ -30,9 +46,34 @@ variable "status_key_type" {
     default = "S"
 }
 
-variable "project" {
-    default = "practice-terraform"
+variable "city_id-user_id-index" {
+    default = "city_id-user_id-index"
 }
+
+variable "created_at-user_id-index" {
+    default = "created_at-user_id-index"
+}
+
+variable "city_id-created_at-index" {
+    default = "_id-created_at-index"
+}
+
+variable "city_id-status-index" {
+    default = "city_id-status-index"
+}
+
+variable "created_at-status-index" {
+    default = "created_at-status-index"
+}
+
+variable "projection_type" {
+    default = "ALL"
+}
+
+variable "billing_mode" {
+    default = "PAY_PER_REQUEST"
+}
+
 
 variable "ttl" {
     default = null
@@ -42,6 +83,5 @@ locals {
   tags = {
     Terraform   = true
     Environment = var.environment
-    Project     = var.project
   }
 }
